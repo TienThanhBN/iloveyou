@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // for (let i = 1; i <= 200; i++) {
+    //     console.log(i);
+    // }
+          // a.voi Arrow function
+        let helloArrow = () => {
+            console.log("Hello");
+        }
+        setTimeout(helloArrow, 3000);
+
+        // b.voi function declaration
+       function xinChao() {
+           console.log("Hello in function declaration");
+       }
+       setTimeout(xinChao, 3000);
+
+       // c.voi function expression
+    let helloExpression = function () {
+        console.log("Hello in function expression");
+    }
+    setTimeout(helloExpression, 3000);
+
+    // 2.truyen truc tiep function vao setTimeout
+    // a.setTimeout voi function declaration
+    setTimeout( function xinChao() {
+        console.log("Hello in function declaration");
+    }, 3000);
+
+    // b.setTimeout voi function expression
+    setTimeout(function () {
+        console.log("Hello in function expression");
+    }, 3000);
+
+    // c.setTimeout voi Arrow function
+    setTimeout(() => {
+        console.log("Hello");
+    }, 3000);
+</script>
+</body>
+</html>

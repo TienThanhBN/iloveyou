@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countdown(minutes) {
+        alert("Thoi gian lam bai cua ban la: " + minutes + "phut");
+        let seconds = minutes * 60;
+
+        let countdownInterval = setInterval(function (){
+            let minutesLeft = Math.floor(seconds/60);
+            let secondsLeft = seconds % 60;
+            let prefixSecondFormat = secondsLeft < 10 ? "0" : "";
+            console.log(`${minutesLeft}:${prefixSecondFormat}${secondsLeft}`);
+
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+                alert("Het thoi gian");
+            }
+            else {
+                seconds--;
+            }
+        }, 1000);
+    }
+    let timeInput = Number(prompt("Moi nhap vao thoi gian lam bai"));
+    countdown(timeInput);
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createRandomArray(n) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(Math.floor(Math.random() * 100));
+        }
+        return arr;
+    }
+    let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+    let randomArray = createRandomArray(n);
+    // Xuất các giá trị trong mảng
+    console.log("=========Mảng ban đầu=========");
+    console.log(randomArray);
+    // in ra chuỗi dùng join
+    console.log("Mảng: " + randomArray.join(","));
+
+    // 3.Đảo ngược mảng và xuất mảng sau khi đảo ngược
+    console.log("======= Mảng sau đảo ngược =======");
+    let reversedArray = randomArray.slice().reverse();
+    console.log(reversedArray);
+
+    // 4.Sắp xếp mảng tăng dần
+    function sortArray(arr) {
+        return arr.sort((a, b) => a - b);
+    }
+    console.log("====== Mảng sau khi sắp xếp tăng dần ======");
+    let sortedArray = sortArray([...randomArray]);
+    console.log(sortedArray);
+
+    // 5.Tính tổng các phần tử trong mảng
+    function sum(arr) {
+        return arr.reduce((a, b) => a + b, 0);
+    }
+    console.log("====== Tổng các phần tử trong mảng ======");
+    let sumElement = sum(randomArray);
+    console.log("Tổng: " + sumElement);
+
+    let searchNum = Number(prompt("Nhập số để kiểm tra: "));
+    // dùng for để duyệt mảng theo index để ktra
+    let indexArr = [];
+    for (let i = 0; i < randomArray.length; i++) {
+        if (searchNum === randomArray[i]) {
+            indexArr.push(i);
+        }
+    }
+    console.log(indexArr);
+
+
+    if (indexArr.length === 0) {
+        console.log(`Không có số ${searchNum} trong mảng`);
+    } else {
+        console.log(`Số ${searchNum} xuất hiện tại vị trí index: `);
+    }
+</script>
+</body>
+</html>

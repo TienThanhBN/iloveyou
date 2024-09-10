@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function separate(inputString) {
+        let letters = "";
+        let numbers = "";
+        for (let i = 0; i < inputString.length; i++) {
+            let char = inputString[i];
+            if (isNaN(char)) {
+                letters += char;
+            } else {
+                numbers += char;
+            }
+        }
+        return {letters, numbers};
+    }
+    let inputString = prompt("Moi nhap chuoi: ");
+    let result = separate(inputString);
+    alert(`
+    chuoi chu: ${result.letters}
+    chuoi so: ${result.numbers}
+    `);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function encryptMessage(message) {
+        const a = "abcdefghijklmnopqrstuvwxyz";
+        const b = "yeuvbnmasdfghjklqwertyuiem";
+        let result = "";
+        for (let i = 0; i < message.length; i++) {
+           let char = message[i].toLowerCase();
+           if(a.includes(char)) {
+               let index = a.indexOf(char);
+               result += b[index];
+           }
+           else {
+               result += char;
+           }
+        }
+        return result;
+    }
+
+    let messageInput = prompt("nhap tin nhan can ma hoa");
+    let kq = encryptMessage(messageInput);
+    alert(`tin nhan duoc ma hoa: ${kq}`);
+</script>
+</body>
+</html>
